@@ -253,17 +253,18 @@ h2.big{font-family:var(--disp);font-weight:700;font-size:clamp(30px,3.7vw,50px);
 .b-5{grid-column:span 2}
 
 /* бронь + календарь — светлая версия */
+/* заголовок блока — над формой, форма во всю ширину контейнера */
 .book-in{background:var(--stone);color:var(--ink);border:1px solid var(--stone-line);border-radius:22px;
-  padding:clamp(30px,4.4vw,58px);display:grid;grid-template-columns:1fr 1fr;
-  gap:clamp(30px,4vw,60px);align-items:center;position:relative;overflow:hidden}
+  padding:clamp(30px,4.4vw,58px);display:block;position:relative;overflow:hidden}
 .book-in::before{content:'';position:absolute;left:-70px;bottom:-70px;width:210px;height:210px;
   clip-path:polygon(0 0,100% 42%,22% 100%);background:var(--emerald);opacity:.09;transform:rotate(18deg)}
-.book-left{position:relative;z-index:1}
-.book-in h2{color:var(--ink);max-width:14ch}
-.book-left p{margin-top:16px;color:var(--ink-soft);max-width:40ch}
+.book-left{position:relative;z-index:1;margin-bottom:clamp(26px,3.2vw,42px)}
+.book-in h2{color:var(--ink);max-width:22ch}
+.book-left p{margin-top:16px;color:var(--ink-soft);max-width:68ch}
 .book-strip{display:flex;gap:5px;margin-bottom:18px}
 .book-strip i{width:11px;height:11px;border-radius:1px;clip-path:polygon(0 0,100% 42%,22% 100%)}
-.blist{display:grid;gap:13px;margin-top:26px}
+.blist{display:grid;grid-template-columns:repeat(3,1fr);gap:16px 30px;margin-top:26px}
+@media(max-width:860px){.blist{grid-template-columns:1fr;gap:13px}}
 .blist div{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;color:var(--ink-soft)}
 .blist b{color:var(--ink);font-weight:600} .blist .tri{margin-top:8px}
 /* панель календаря */
@@ -507,7 +508,7 @@ footer{padding:54px 0 36px;border-top:1px solid var(--line)}
   .m-d{grid-column:span 2}
   .facts-in{grid-template-columns:repeat(3,1fr)}
   .f{border-bottom:1px solid var(--line)}
-  .book-in{grid-template-columns:1fr;gap:30px}
+  .book-in{padding:26px 20px}
   .foot{grid-template-columns:1fr 1fr}
   .hnav{display:none}
   .btn-tg span,.hlogin,.brand-tt i{display:none}
