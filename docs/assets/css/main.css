@@ -519,6 +519,10 @@ footer{padding:54px 0 36px;border-top:1px solid var(--line)}
   .wrap,.facts-in,.bar{padding-left:20px;padding-right:20px}
   .bar{padding-top:10px;padding-bottom:10px;gap:12px}
   .brand b{font-size:14.5px} .brand img{width:31px;height:31px}
+  /* на узких экранах название бренда не должно налезать на кнопку Telegram */
+  .brand{min-width:0;margin-right:0}
+  .brand-tt{min-width:0}
+  .brand-tt b{font-size:13.5px;letter-spacing:-.015em}
   .btn-sm{padding:10px 15px;font-size:13.5px;min-height:42px}
   .hero-left{padding:calc(58px + 22px) 20px 30px}
   .hero-left h1{font-size:32px}
