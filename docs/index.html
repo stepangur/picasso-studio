@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>[ТЕСТ] Город Пикассо — фото- и киностудия 2000 м², 20+ интерьеров в Москве</title>
 <meta name="description" content="20+ интерьеров в одной из крупнейших фото- и киностудий Москвы. 2000 м², 1 минута от метро, круглосуточно. Два Profoto D2 в каждом зале бесплатно.">
-<link rel="preconnect" href="https://4312.cue.business" crossorigin>
-<link rel="dns-prefetch" href="https://4312.cue.business">
+<link rel="preconnect" href="https://appevent.ru" crossorigin>
+<link rel="dns-prefetch" href="https://appevent.ru">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#FAF7F1">
 <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
@@ -44,7 +44,7 @@
     <a class="hlogin" href="#book">Войти</a>
     <a class="btn btn-tg btn-sm" href="https://t.me/picassostudio" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.7-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.7 13.2 2 11.7c-1-.3-1-1 .2-1.5l18.4-7.1c.8-.3 1.6.2 1.3 1.2z"/></svg><span>Telegram</span></a>
-    <a class="btn btn-solid btn-sm hbook-cta" href="#book" data-cue-open>Забронировать</a>
+    <a class="btn btn-solid btn-sm hbook-cta" href="#book">Забронировать</a>
   </div>
 </header>
 
@@ -62,7 +62,7 @@
       <span class="hb"><b>Потолки 5 м</b></span>
     </div>
     <div class="hero-cta">
-      <a class="btn btn-solid" href="#book" data-cue-open>Забронировать зал</a>
+      <a class="btn btn-solid" href="#book">Забронировать зал</a>
       <a class="btn btn-out" href="#halls">Выбрать студию</a>
     </div>
   </div>
@@ -622,16 +622,8 @@
 
     <div class="eq-rent rv">
       <h3 class="eq-title">Забронировать оборудование</h3>
-      <p class="eq-lead">Техника бронируется отдельно от зала — выберите позиции и дату смены.</p>
-      <!-- ===== Cue · прокат оборудования ===== -->
-      <div id="cue-booking-inventory" data-cue-booking-root></div>
-      <script
-        async
-        src="https://4312.cue.business/widget/embed.v1.js?v=1.2.0"
-        data-cue-url="https://4312.cue.business/inventory-rent?color=145078&background=ffffff&radius=12"
-        data-cue-target="#cue-booking-inventory"
-        data-cue-config='{"theme":{"accent":"#145078","background":"#FFFFFF","radius":12}}'
-      ></script>
+      <p class="eq-lead">Техника добавляется к брони зала при оформлении заказа.</p>
+      <a class="btn btn-out" href="#book">Добавить технику к брони</a>
     </div>
   </div>
 </section>
@@ -743,16 +735,13 @@
         </div>
       </div>
 
-      <div class="viva" id="cueBooking">
-        <!-- ===== Cue · онлайн-запись (аккаунт 4312) ===== -->
-        <div id="cue-booking-main" data-cue-booking-root></div>
-        <script
-          async
-          src="https://4312.cue.business/widget/embed.v1.js?v=1.2.0"
-          data-cue-url="https://4312.cue.business/widget/19736?color=145078&background=ffffff&radius=12"
-          data-cue-target="#cue-booking-main"
-          data-cue-config='{"theme":{"accent":"#145078","background":"#FFFFFF","radius":12}}'
-        ></script>
+      <div class="viva" id="bookingWidget">
+        <!-- ===== AppEvent · онлайн-запись ===== -->
+        <iframe class="aeCustomWidget"
+                src="https://appevent.ru/widget/embeded?widget_key=3aeebfbdf87cb68f3f6e08a42fb3bc50&amp;hall_id=29171"
+                title="Онлайн-запись «Город Пикассо»"
+                width="100%" height="1120"></iframe>
+        <script id="aeWidgetScript" src="//appevent.ru/widgets/widgethandle.min.js?widget_key=8928fa05c3fc91750ac76a6cd1286823&amp;silent=1" async charset="UTF-8"></script>
         <noscript>
           <p class="vd-note">Для онлайн-записи включите JavaScript или
             <a href="https://t.me/picassostudio" target="_blank" rel="noopener">напишите администратору</a>.</p>
@@ -812,23 +801,6 @@
 
 
 
-<div class="cue-modal" id="cueModal" role="dialog" aria-modal="true" aria-label="Онлайн-запись" hidden>
-  <div class="cue-modal__backdrop" data-close></div>
-  <div class="cue-modal__box">
-    <button class="cue-modal__x" data-close aria-label="Закрыть">&times;</button>
-    <div class="cue-modal__head">
-      <span class="cm-title">Забронировать зал</span>
-      <span class="cm-pow">онлайн-запись через <b>Cue</b></span>
-    </div>
-    <!-- Cue · тот же календарь, грузится при первом открытии попапа -->
-    <div class="cue-modal__body" id="cueModalBody"
-         data-cue-embed="https://4312.cue.business/widget/embed.v1.js?v=1.2.0"
-         data-cue-url="https://4312.cue.business/widget/19736?color=145078&background=ffffff&radius=12"
-         data-cue-config='{"theme":{"accent":"#145078","background":"#FFFFFF","radius":12}}'>
-      <p class="cm-ph">Загружаем расписание…</p>
-    </div>
-  </div>
-</div>
 
 </main>
 

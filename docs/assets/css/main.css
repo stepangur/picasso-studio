@@ -579,3 +579,7 @@ footer{padding:54px 0 36px;border-top:1px solid var(--line)}
 
 /* контейнер виджета Cue в попапе */
 .cue-modal__body>[data-cue-booking-root]{min-height:60vh}
+
+/* ---------- онлайн-запись AppEvent ---------- */
+.aeCustomWidget{display:block;width:100%;border:0;background:#fff;border-radius:12px}
+.eq-rent .btn{margin-top:4px}

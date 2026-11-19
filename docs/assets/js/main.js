@@ -71,42 +71,6 @@
 
 
 
-  // ---------- попап онлайн-записи Cue ----------
-  (function(){
-    const modal=document.getElementById('cueModal');
-    if(!modal) return;
-    let lastFocus=null;
-    function open(e){ if(e){e.preventDefault();} lastFocus=document.activeElement;
-      modal.hidden=false; document.body.style.overflow='hidden';
-      modal.querySelector('.cue-modal__x').focus(); }
-    function close(){ modal.hidden=true; document.body.style.overflow='';
-      if(lastFocus&&lastFocus.focus) lastFocus.focus(); }
-    document.querySelectorAll('[data-cue-open]').forEach(el=>el.addEventListener('click',open));
-    modal.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click',close));
-    document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&!modal.hidden) close(); });
-  })();
-
-  // ---------- Cue в попапе: виджет грузится при первом открытии ----------
-  (function(){
-    const body = document.getElementById('cueModalBody');
-    if(!body) return;
-    let loaded = false;
-    function mount(){
-      if(loaded) return;
-      loaded = true;
-      body.innerHTML = '<div id="cue-booking-modal" data-cue-booking-root></div>';
-      const s = document.createElement('script');
-      s.async = true;
-      s.src = body.dataset.cueEmbed;
-      s.setAttribute('data-cue-url', body.dataset.cueUrl);
-      s.setAttribute('data-cue-target', '#cue-booking-modal');
-      s.setAttribute('data-cue-config', body.dataset.cueConfig);
-      body.appendChild(s);
-    }
-    document.querySelectorAll('[data-cue-open]').forEach(el =>
-      el.addEventListener('click', mount));
-  })();
-
   const io=new IntersectionObserver(es=>{ onscreen=es[0].isIntersecting; tick(); },{threshold:.12});
     io.observe(document.getElementById('hero'));
     tick();
